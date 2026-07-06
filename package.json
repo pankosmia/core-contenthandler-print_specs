@@ -1,8 +1,8 @@
 {
-  "name": "core-contenthander-print_specs",
+  "name": "core-contenthandler-print_specs",
   "version": "0.0.1",
   "private": true,
-  "homepage": "/clients/core-contenthander-print_specs",
+  "homepage": "/clients/core-contenthandler-print_specs",
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",

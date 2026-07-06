@@ -44,7 +44,7 @@ export default function NewOBSContent() {
     optionCopyright !== "public-domain"
       ? `${copyright.author_name} ${copyright.year}`
       : `${doI18n(
-          "pages:core-contenthander-print_specs:public_domain",
+          "pages:core-contenthandler-print_specs:public_domain",
           i18nRef.current,
         )}`;
   const [errorAbbreviation, setErrorAbbreviation] = useState(false);
@@ -99,7 +99,7 @@ export default function NewOBSContent() {
       setPostCount(postCount + 1);
       enqueueSnackbar(
         doI18n(
-          "pages:core-contenthander-print_specs:content_created",
+          "pages:core-contenthandler-print_specs:content_created",
           i18nRef.current,
         ),
         { variant: "success" },
@@ -107,7 +107,7 @@ export default function NewOBSContent() {
       // handleClose();
     } else {
       enqueueSnackbar(
-        `${doI18n("pages:core-contenthander-print_specs:project_creation_error", i18nRef.current)}: `,
+        `${doI18n("pages:core-contenthandler-print_specs:project_creation_error", i18nRef.current)}: `,
         { variant: "error" },
       );
     }
@@ -140,7 +140,7 @@ export default function NewOBSContent() {
 
       <PanDialog
         titleLabel={doI18n(
-          "pages:core-contenthander-print_specs:create_content_print_specs",
+          "pages:core-contenthandler-print_specs:create_content_print_specs",
           i18nRef.current,
         )}
         isOpen={open}
@@ -148,7 +148,7 @@ export default function NewOBSContent() {
       >
         <DialogContentText variant="subtitle2" sx={{ ml: 1, p: 1 }}>
           {doI18n(
-            `pages:core-contenthander-print_specs:required_field`,
+            `pages:core-contenthandler-print_specs:required_field`,
             i18nRef.current,
           )}
         </DialogContentText>
@@ -164,7 +164,7 @@ export default function NewOBSContent() {
               id="name"
               required
               label={doI18n(
-                "pages:core-contenthander-print_specs:name",
+                "pages:core-contenthandler-print_specs:name",
                 i18nRef.current,
               )}
               value={contentName}
@@ -180,7 +180,7 @@ export default function NewOBSContent() {
                 },
               }}
               title={doI18n(
-                "pages:core-contenthander-print_specs:name_is_taken",
+                "pages:core-contenthandler-print_specs:name_is_taken",
                 i18nRef.current,
               )}
               placement="top-start"
@@ -188,10 +188,10 @@ export default function NewOBSContent() {
               <TextField
                 id="abbr"
                 error={errorAbbreviation}
-                helperText={`${doI18n("pages:core-contenthander-print_specs:helper_abbreviation", i18nRef.current)}`}
+                helperText={`${doI18n("pages:core-contenthandler-print_specs:helper_abbreviation", i18nRef.current)}`}
                 required
                 label={doI18n(
-                  "pages:core-contenthander-print_specs:abbreviation",
+                  "pages:core-contenthandler-print_specs:abbreviation",
                   i18nRef.current,
                 )}
                 value={contentAbbr}
@@ -229,7 +229,7 @@ export default function NewOBSContent() {
                     value="public-domain"
                     control={<Radio />}
                     label={doI18n(
-                      "pages:core-contenthander-print_specs:public_domain",
+                      "pages:core-contenthandler-print_specs:public_domain",
                       i18nRef.current,
                     )}
                   />
@@ -242,7 +242,7 @@ export default function NewOBSContent() {
                     sx={{ width: "100%" }}
                     required
                     label={doI18n(
-                      "pages:core-contenthander-print_specs:author_name",
+                      "pages:core-contenthandler-print_specs:author_name",
                       i18nRef.current,
                     )}
                     value={copyright.author_name}
@@ -259,7 +259,7 @@ export default function NewOBSContent() {
                     id="year"
                     required
                     label={doI18n(
-                      "pages:core-contenthander-print_specs:year",
+                      "pages:core-contenthandler-print_specs:year",
                       i18nRef.current,
                     )}
                     value={copyright.year}
@@ -278,13 +278,13 @@ export default function NewOBSContent() {
         <PanDialogActions
           closeFn={() => handleClose()}
           closeLabel={doI18n(
-            "pages:core-contenthander-print_specs:close",
+            "pages:core-contenthandler-print_specs:close",
             i18nRef.current,
           )}
           actionFn={handleCreate}
           closeOnAction={false}
           actionLabel={doI18n(
-            "pages:core-contenthander-print_specs:create",
+            "pages:core-contenthandler-print_specs:create",
             i18nRef.current,
           )}
           isDisabled={

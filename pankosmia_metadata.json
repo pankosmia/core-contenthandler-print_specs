@@ -1,5 +1,5 @@
 {
-  "id": "core-contenthander-print_specs",
+  "id": "core-contenthandler-print_specs",
   "require": {
     "net": false,
     "debug": true
@@ -10,18 +10,18 @@
         {
           "doc": "Create document for textTranslation Project",
           "placeHolders": {},
-          "label": "pages:core-contenthander-print_specs:new_print_specs",
-          "url": "/createDocument/translationPlan"
+          "label": "pages:core-contenthandler-print_specs:new_print_specs",
+          "url": "/"
         }
       ]
     }
   },
   "i18n": {
     "title": {
-      "en": "core-contenthander-print_specs"
+      "en": "core-contenthandler-print_specs"
     },
     "summary": {
-      "en": "core-contenthander-print_specs"
+      "en": "core-contenthandler-print_specs"
     },
     "new_print_specs": {
       "en": "Print project",
