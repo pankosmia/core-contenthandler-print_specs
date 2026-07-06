@@ -1,3 +1,3 @@
-# contenthandler-template
+# core-contenthander-print_specs
 
-contenthandler-template
+core-contenthander-print_specs

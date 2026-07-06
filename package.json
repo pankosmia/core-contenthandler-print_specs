@@ -1,8 +1,8 @@
 {
-  "name": "contenthandler-template",
+  "name": "core-contenthander-print_specs",
   "version": "0.0.1",
   "private": true,
-  "homepage": "/clients/contenthandler-template",
+  "homepage": "/clients/core-contenthander-print_specs",
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",

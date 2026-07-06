@@ -2,7 +2,7 @@ import { createRoot } from "react-dom/client";
 import { SpaContainer } from "pankosmia-rcl";
 import { createHashRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
-import App from "./App";
+import App from "./pages/App";
 import { ThemeProvider } from "@emotion/react";
 import { useEffect, useState } from "react";
 import { getAndSetJson } from "pankosmia-lib/http";

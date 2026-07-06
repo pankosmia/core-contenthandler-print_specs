@@ -10,10 +10,16 @@ export default defineConfig({
     host: true,
     cors: true,
     origin: "http://localhost:8000",
+    proxy: {
+      "/api": {
+        target: "http://localhost:19119",
+        changeOrigin: true,
+      },
+    },
   },
   build: {
     outDir: "build",
     emptyOutDir: true,
   },
-  base: "/clients/contenthandler-template/",
+  base: "/clients/core-contenthandler-print_specs/",
 });
