@@ -4,12 +4,28 @@
     "net": false,
     "debug": true
   },
+  "endpoints": {
+    "x-print_specs": {
+      "create_document": [
+        {
+          "doc": "Create document for textTranslation Project",
+          "placeHolders": {},
+          "label": "pages:core-contenthander-print_specs:new_print_specs",
+          "url": "/createDocument/translationPlan"
+        }
+      ]
+    }
+  },
   "i18n": {
     "title": {
       "en": "core-contenthander-print_specs"
     },
     "summary": {
       "en": "core-contenthander-print_specs"
+    },
+    "new_print_specs": {
+      "en": "Print project",
+      "fr": "Project d'impression"
     },
     "stub_content": {
       "en": "Content goes here"
