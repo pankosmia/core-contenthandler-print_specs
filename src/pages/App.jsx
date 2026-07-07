@@ -97,14 +97,7 @@ export default function NewOBSContent() {
     );
     if (response.ok) {
       setPostCount(postCount + 1);
-      enqueueSnackbar(
-        doI18n(
-          "pages:core-contenthandler-print_specs:content_created",
-          i18nRef.current,
-        ),
-        { variant: "success" },
-      );
-      // handleClose();
+      handleClose();
     } else {
       enqueueSnackbar(
         `${doI18n("pages:core-contenthandler-print_specs:project_creation_error", i18nRef.current)}: `,
