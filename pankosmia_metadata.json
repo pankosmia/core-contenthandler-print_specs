@@ -1,5 +1,7 @@
 {
   "id": "core-contenthandler-print_specs",
+  "exclude_from_menu": true,
+  "exclude_from_dashboard": false,
   "require": {
     "net": false,
     "debug": true
