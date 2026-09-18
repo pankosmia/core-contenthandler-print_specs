@@ -1,14 +1,21 @@
 {
-  "name": "contenthandler-template",
+  "name": "core-contenthandler-print_specs",
   "version": "0.0.1",
   "private": true,
-  "homepage": "/clients/contenthandler-template",
+  "homepage": "/clients/core-contenthandler-print_specs",
+  "packageManager": "pnpm@11.20.0",
+  "engines": {
+    "node": ">=24",
+    "pnpm": "11.20.0"
+  },
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@mui/material": "^6.1.5",
-    "pankosmia-rcl": "^0.1.41",
-    "pithekos-lib": "^0.11.4",
+    "eslint-config-react-app": "^7.0.1",
+    "notistack": "^3.0.2",
+    "pankosmia-lib": "^0.0.3",
+    "pankosmia-rcl": "0.4.22",
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0",
     "react-router-dom": "^7.9.4"
