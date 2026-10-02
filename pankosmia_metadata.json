@@ -95,6 +95,10 @@
     "year": {
       "en": "Year",
       "fr": "Année"
+    },
+    "unspecified_copyright": {
+      "en": "Unspecified",
+      "fr": "Non spécifié"
     }
   }
 }

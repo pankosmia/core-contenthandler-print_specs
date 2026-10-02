@@ -2,7 +2,7 @@ import { useState, useContext, useEffect } from "react";
 import {
   Box,
   DialogContent,
-  Grid2,
+  Grid,
   TextField,
   Tooltip,
   DialogContentText,
@@ -15,7 +15,12 @@ import { enqueueSnackbar } from "notistack";
 import { postJson, getAndSetJson } from "pankosmia-lib/http";
 import { doI18n } from "pankosmia-lib/i18n";
 import { i18nContext, debugContext, Header } from "pankosmia-rcl";
-import { PanDialog, PanDialogActions, PanLanguagePicker } from "pankosmia-rcl";
+import {
+  PanDialog,
+  PanDialogActions,
+  PanLanguagePicker,
+  PanCopyright,
+} from "pankosmia-rcl";
 import SectionDialog from "../content/SectionDialog";
 
 export default function NewOBSContent() {
@@ -145,128 +150,79 @@ export default function NewOBSContent() {
             i18nRef.current,
           )}
         </DialogContentText>
-        <DialogContent spacing={2}>
-          <Grid2
-            container
-            spacing={2}
-            justifyItems="flex-end"
-            alignItems="stretch"
-            flexDirection={"column"}
-          >
-            <TextField
-              id="name"
-              required
-              label={doI18n(
-                "pages:core-contenthandler-print_specs:name",
-                i18nRef.current,
-              )}
-              value={contentName}
-              onChange={(event) => {
-                setContentName(event.target.value);
-              }}
-            />
-            <Tooltip
-              open={repoExists}
-              slotProps={{
-                popper: {
-                  modifiers: [{ name: "offset", options: { offset: [0, -7] } }],
-                },
-              }}
-              title={doI18n(
-                "pages:core-contenthandler-print_specs:name_is_taken",
-                i18nRef.current,
-              )}
-              placement="top-start"
-            >
+        <DialogContent>
+          <Grid container spacing={1}>
+            <Grid item size={12}>
               <TextField
-                id="abbr"
-                error={errorAbbreviation}
-                helperText={`${doI18n("pages:core-contenthandler-print_specs:helper_abbreviation", i18nRef.current)}`}
+                fullWidth
+                id="name"
                 required
                 label={doI18n(
-                  "pages:core-contenthandler-print_specs:abbreviation",
+                  "pages:core-contenthandler-print_specs:name",
                   i18nRef.current,
                 )}
-                value={contentAbbr}
+                value={contentName}
                 onChange={(event) => {
-                  const value = event.target.value;
-                  setRepoExists(
-                    localRepos.map((l) => l.split("/")[2]).includes(value),
-                  );
-                  setContentAbbr(value);
-                  setErrorAbbreviation(
-                    value.length > 0 && !regexAbbreviation.test(value),
-                  );
+                  setContentName(event.target.value);
                 }}
               />
-            </Tooltip>
-            <PanLanguagePicker
-              currentLanguage={currentLanguage}
-              setCurrentLanguage={setCurrentLanguage}
-              setIsValid={setLanguageIsValid}
-            />
-            <SectionDialog titleSection="Copyright">
-              <FormControl>
-                <RadioGroup
-                  value={optionCopyright}
-                  onChange={handleChange}
-                  row
-                  name="row-radio-buttons-group"
-                >
-                  <FormControlLabel
-                    value="all_rights_reserved"
-                    control={<Radio />}
-                    label="All rights reserved"
-                  />
-                  <FormControlLabel
-                    value="public-domain"
-                    control={<Radio />}
-                    label={doI18n(
-                      "pages:core-contenthandler-print_specs:public_domain",
-                      i18nRef.current,
-                    )}
-                  />
-                </RadioGroup>
-              </FormControl>
-              {optionCopyright === "all_rights_reserved" && (
-                <>
-                  <TextField
-                    id="author_name"
-                    sx={{ width: "100%" }}
-                    required
-                    label={doI18n(
-                      "pages:core-contenthandler-print_specs:author_name",
-                      i18nRef.current,
-                    )}
-                    value={copyright.author_name}
-                    onChange={(e) =>
-                      setCopyright({
-                        ...copyright,
-                        author_name: e.target.value,
-                      })
-                    }
-                  />
-
-                  <TextField
-                    sx={{ width: "100%" }}
-                    id="year"
-                    required
-                    label={doI18n(
-                      "pages:core-contenthandler-print_specs:year",
-                      i18nRef.current,
-                    )}
-                    value={copyright.year}
-                    onChange={(e) =>
-                      setCopyright({
-                        ...copyright,
-                        year: e.target.value.replace(/\D/g, "").slice(0, 4),
-                      })
-                    }
-                  />
-                </>
-              )}
-            </SectionDialog>
-          </Grid2>
+            </Grid>
+            <Grid size={12}>
+              <Tooltip
+                open={repoExists}
+                slotProps={{
+                  popper: {
+                    modifiers: [
+                      { name: "offset", options: { offset: [0, -7] } },
+                    ],
+                  },
+                }}
+                title={doI18n(
+                  "pages:core-contenthandler-print_specs:name_is_taken",
+                  i18nRef.current,
+                )}
+                placement="top-start"
+              >
+                <TextField
+                  fullWidth
+                  id="abbr"
+                  error={errorAbbreviation}
+                  helperText={`${doI18n("pages:core-contenthandler-print_specs:helper_abbreviation", i18nRef.current)}`}
+                  required
+                  label={doI18n(
+                    "pages:core-contenthandler-print_specs:abbreviation",
+                    i18nRef.current,
+                  )}
+                  value={contentAbbr}
+                  onChange={(event) => {
+                    const value = event.target.value;
+                    setRepoExists(
+                      localRepos.map((l) => l.split("/")[2]).includes(value),
+                    );
+                    setContentAbbr(value);
+                    setErrorAbbreviation(
+                      value.length > 0 && !regexAbbreviation.test(value),
+                    );
+                  }}
+                />
+              </Tooltip>
+            </Grid>
+            <Grid size={12}>
+              <PanLanguagePicker
+                currentLanguage={currentLanguage}
+                setCurrentLanguage={setCurrentLanguage}
+                setIsValid={setLanguageIsValid}
+              />
+            </Grid>
+            <Grid size={12} style={{ pt: "16px" }}>
+              <PanCopyright
+                optionCopyright={optionCopyright}
+                setOptionCopyright={setOptionCopyright}
+                copyright={copyright}
+                setCopyright={setCopyright}
+              />
+            </Grid>
+          </Grid>
         </DialogContent>
         <PanDialogActions
           closeFn={() => handleClose()}
