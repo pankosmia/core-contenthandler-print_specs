@@ -2,6 +2,7 @@
   "id": "core-contenthandler-print_specs",
   "exclude_from_menu": true,
   "exclude_from_dashboard": false,
+  "minServerVersion": "0.18.15",
   "require": {
     "net": false,
     "debug": true
