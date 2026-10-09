@@ -44,7 +44,7 @@ export default function NewOBSContent() {
     author_name: "",
     year: "",
   });
-  const [optionCopyright, setOptionCopyright] = useState("all_rights_reserved");
+  const [optionCopyright, setOptionCopyright] = useState("unspecified");
   const fullCopyright =
     optionCopyright !== "public-domain"
       ? `${copyright.author_name} ${copyright.year}`
