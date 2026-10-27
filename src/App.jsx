@@ -21,9 +21,8 @@ import {
   PanLanguagePicker,
   PanCopyright,
 } from "pankosmia-rcl";
-import SectionDialog from "../content/SectionDialog";
 
-export default function NewOBSContent() {
+export default function newPrintSpecsContent() {
   const { i18nRef } = useContext(i18nContext);
   const { debugRef } = useContext(debugContext);
   const [contentName, setContentName] = useState("");
